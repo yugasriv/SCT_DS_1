@@ -1,0 +1,44 @@
+# Import libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# ----------------------------
+# 1️⃣ BAR CHART – Gender Distribution
+# ----------------------------
+
+# Create a small sample dataset for gender
+gender_data = {
+    'Gender': ['Male', 'Female', 'Other'],
+    'Population': [480, 500, 20]
+}
+
+gender_df = pd.DataFrame(gender_data)
+
+# Plot Bar Chart
+plt.figure(figsize=(6,4))
+plt.bar(gender_df['Gender'], gender_df['Population'], color=['skyblue', 'lightcoral', 'gold'])
+plt.title("Population Distribution by Gender", fontsize=14)
+plt.xlabel("Gender", fontsize=12)
+plt.ylabel("Population (in millions)", fontsize=12)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.show()
+
+
+# ----------------------------
+# 2️⃣ HISTOGRAM – Age Distribution
+# ----------------------------
+
+# Generate random age data for a population
+ages = np.random.normal(30, 12, 1000)   # mean=30, std=12, n=1000
+
+# Plot Histogram
+plt.figure(figsize=(7,4))
+plt.hist(ages, bins=10, color='mediumseagreen', edgecolor='black')
+plt.title("Age Distribution in Population", fontsize=14)
+plt.xlabel("Age", fontsize=12)
+plt.ylabel("Frequency", fontsize=12)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.show()
